@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Perdón</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .carta {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            color: #d9534f;
+        }
+        p {
+            text-align: left;
+        }
+        .botones {
+            margin-top: 20px;
+        }
+        .boton {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .si {
+            background-color: #5cb85c;
+            color: white;
+        }
+        .no {
+            background-color: #d9534f;
+            color: white;
+            position: absolute;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function moverBoton() {
+            let botonNo = document.getElementById('no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+        }
+
+        function aceptarPerdon() {
+            alert("¡Gracias por aceptar mi disculpa! Significa mucho para mí.");
+        }
+    </script>
+</head>
+<body>
+    <div class="carta">
+        <h1>Querido/a [Nombre],</h1>
+        <p>Hoy me siento en la necesidad de escribirte estas palabras desde lo más profundo de mi corazón. Sé que mis acciones, palabras o decisiones te han lastimado, y no hay nada que desee más en este momento que poder enmendar el dolor que he causado.</p>
+        <p>No fue mi intención herirte, pero entiendo que lo hice. Me pesa en el alma haber afectado nuestra relación y la confianza que habíamos construido. Si pudiera retroceder el tiempo, actuaría de otra manera, pero lo único que puedo hacer ahora es asumir mi responsabilidad y pedirte perdón de todo corazón.</p>
+        <p>Valoro cada momento que hemos compartido y todo lo que significas en mi vida. Si me das la oportunidad, me gustaría demostrarte con hechos que estoy arrepentido/a y que estoy dispuesto/a a hacer lo necesario para reparar el daño.</p>
+        <p>Entiendo si necesitas tiempo, si aún te duele lo sucedido o si no estás listo/a para aceptar mis disculpas. Solo quiero que sepas que mi arrepentimiento es sincero y que espero, con todo mi corazón, poder recuperar tu confianza algún día.</p>
+        <p>Con todo mi cariño y respeto,</p>
+        <p><strong>[Tu Nombre]</strong></p>
+        <div class="botones">
+            <button class="boton si" onclick="aceptarPerdon()">Sí</button>
+            <button class="boton no" id="no" onmouseover="moverBoton()">No</button>
+        </div>
+    </div>
+</body>
+</html>
